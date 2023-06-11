@@ -1,3 +1,8 @@
+# This is a client for gender api service
+
+# Documentation:
+# https://gender-api.com/en/api-docs/v2/country-of-origin
+
 module GenderApi
   class Client
     class GenderApiError < StandardError; end
@@ -21,11 +26,15 @@ module GenderApi
       def client
         Faraday.new(
           url: 'https://gender-api.com',
-          headers: {'Authorization' => "Bearer #{ENV['GENDER_API_AUTHENTICATION_TOKEN']}"}
+          headers: {'Authorization' => "Bearer #{authentication_token}"}
         ).tap do |connection|
           connection.request :timer
           connection.adapter Faraday.default_adapter
         end
+      end
+
+      def authentication_token
+        ENV['GENDER_API_AUTHENTICATION_TOKEN']
       end
     end
   end

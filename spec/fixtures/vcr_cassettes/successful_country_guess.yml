@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gender-api.com/v2/country-of-origin
+    body:
+      encoding: UTF-8
+      string: full_name=Oleh+Cherednichenko
+    headers:
+      Authorization:
+      - Bearer token
+      User-Agent:
+      - Faraday v1.8.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sat, 10 Jun 2023 14:42:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-ng:
+      - 'count: 2, id: 38181'
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - '1'
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000
+      content-security-policy:
+      - frame-ancestors 'none';
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "input": {
+                "full_name": "Oleh Cherednichenko"
+            },
+            "details": {
+                "credits_used": 2,
+                "duration": "65ms",
+                "samples": 387,
+                "country": null,
+                "first_name_sanitized": "oleh"
+            },
+            "result_found": true,
+            "country_of_origin": [
+                {
+                    "country_name": "Ukraine",
+                    "country": "UA",
+                    "probability": 0.85,
+                    "continental_region": "Europe",
+                    "statistical_region": "Eastern Europe"
+                },
+                {
+                    "country_name": "Slovenia",
+                    "country": "SI",
+                    "probability": 0.04,
+                    "continental_region": "Europe",
+                    "statistical_region": "Southern Europe"
+                },
+                {
+                    "country_name": "Czech Republic",
+                    "country": "CZ",
+                    "probability": 0.04,
+                    "continental_region": "Europe",
+                    "statistical_region": "Eastern Europe"
+                },
+                {
+                    "country_name": "Portugal",
+                    "country": "PT",
+                    "probability": 0.03,
+                    "continental_region": "Europe",
+                    "statistical_region": "Southern Europe"
+                },
+                {
+                    "country_name": "Indonesia",
+                    "country": "ID",
+                    "probability": 0.02,
+                    "continental_region": "Asia",
+                    "statistical_region": "South-eastern Asia"
+                },
+                {
+                    "country_name": "Spain",
+                    "country": "ES",
+                    "probability": 0.02,
+                    "continental_region": "Europe",
+                    "statistical_region": "Southern Europe"
+                },
+                {
+                    "country_name": "Italy",
+                    "country": "IT",
+                    "probability": 0.02,
+                    "continental_region": "Europe",
+                    "statistical_region": "Southern Europe"
+                }
+            ],
+            "country_of_origin_map_url": "https:\/\/gender-api.com\/en\/map\/69458562\/a84afffab4db9120",
+            "last_name": "Cherednichenko",
+            "first_name": "Oleh",
+            "probability": 0.98,
+            "gender": "male"
+        }
+  recorded_at: Sat, 10 Jun 2023 14:42:45 GMT
+recorded_with: VCR 6.1.0

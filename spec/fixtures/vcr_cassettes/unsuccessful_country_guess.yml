@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gender-api.com/v2/country-of-origin
+    body:
+      encoding: UTF-8
+      string: full_name=Oleh+Cherednichenko
+    headers:
+      Authorization:
+      - Bearer wrong_token
+      User-Agent:
+      - Faraday v1.8.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx
+      date:
+      - Sat, 10 Jun 2023 14:46:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "token": "wrong_token",
+            "status": 400,
+            "type": "https:\/\/gender-api.com\/en\/api-docs\/v2\/problem-details\/invalid-auth-token",
+            "title": "invalid-auth-token",
+            "detail": "Invalid authentication token provided. Please log in to your account to find a list of valid tokens or to create a new one."
+        }
+  recorded_at: Sat, 10 Jun 2023 14:46:44 GMT
+recorded_with: VCR 6.1.0

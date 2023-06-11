@@ -27,7 +27,7 @@ I found a service gender-api that offers an api that based on the name can predi
 - run `bundle install` to install all the dependencies
 - you would need to register at [gender api](https://gender-api.com) to get an api key that you will insert into `.env`, you can also use my free key that is already there
 - run the server `bundle exec rails server`
-- use `curl` or any other alternative to access the endpoint
+- use `curl` or any other alternative to access the country_guess endpoint
 
 Curl example:
 ```
