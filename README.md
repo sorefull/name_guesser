@@ -25,7 +25,7 @@ I found a service gender-api that offers an api that based on the name can predi
 - you would need to set the ruby version to `3.1.2`
 - the project uses bundler `2.3.26`
 - run `bundle install` to install all the dependencies
-- you would need to register at [gender api](https://gender-api.com) to get an api key that you will insert into `.env`, you can also use my free key that is already there
+- you would need to register at [gender api](https://gender-api.com) to get an api key that you will insert into `.env` under name GENDER_API_AUTHENTICATION_TOKEN
 - run the server `bundle exec rails server`
 - use `curl` or any other alternative to access the country_guess endpoint
 
