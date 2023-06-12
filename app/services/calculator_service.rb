@@ -34,7 +34,7 @@ class CalculatorService
   def filter_expression(expression)
     expression
       .gsub(/\++/, '+')
-      .gsub(/\-+/, '-')
+      .gsub(/-+/, '-')
       .gsub(/\*+/, '*')
       .gsub(/\\+/, '\\')
   end
