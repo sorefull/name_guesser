@@ -58,9 +58,7 @@ If you want to support more than the basic operations, feel free to have them in
 
 # Implementation
 
-I decided to use ruby method `eval` to implement this calculator due to the limited time and it's also easier to maintain and extend operators list. Because `eval` on data from user is known to be not the best practice because it creates a security bridge I am adding some extra logic to make sure that nothing bad would be passed to the console that can damage or compromise the system.
-
-Alternatively to `eval` it could have been done by recursively splitting expression operator after operator ordered by priority of operators to calculate the result.
+I decided not to use ruby method `eval` to implement this calculator because `eval` is known to be not the best practice because it creates a security bridge. Instead i am using RecursiveCalculatingService service.
 
 # Usage
 
