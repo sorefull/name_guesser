@@ -33,11 +33,12 @@ RSpec.describe 'Country guess', type: :request do
       allow(GenderApi::Client).to receive(:authentication_token).and_return('wrong_token')
     end
 
-    it 'raises exeption with respective code' do
+    it 'rerurns errors' do
       VCR.use_cassette('unsuccessful_country_guess') do
-        expect {
-          get '/country_guess', params: { name: 'Oleh Cherednichenko' }
-        }.to raise_error(GenderApi::Client::GenderApiError)
+        get '/country_guess', params: { name: 'Oleh Cherednichenko' }
+
+        expect(response.code).to eq('422')
+        expect(response.body).to include("Gender api returned 400 code calling /v2/country-of-origin endpoint")
       end
     end
   end
