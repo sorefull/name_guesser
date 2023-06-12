@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'gender_api/client'
 
@@ -38,7 +40,7 @@ RSpec.describe 'Country guess', type: :request do
         get '/country_guess', params: { name: 'Oleh Cherednichenko' }
 
         expect(response.code).to eq('422')
-        expect(response.body).to include("Gender api returned 400 code calling /v2/country-of-origin endpoint")
+        expect(response.body).to include('Gender api returned 400 code calling /v2/country-of-origin endpoint')
       end
     end
   end

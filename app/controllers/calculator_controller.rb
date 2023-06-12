@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CalculatorController < ApplicationController
   def index
     service = CalculatorService.new(params[:expression])

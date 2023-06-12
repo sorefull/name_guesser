@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CalculatorService
   class CalculationError < StandardError; end
 
@@ -12,14 +14,14 @@ class CalculatorService
   end
 
   def call
-    raise CalculationError.new(ERROR_MESAGE_CHARACTERS) if unpermitted_expression?
+    raise CalculationError, ERROR_MESAGE_CHARACTERS if unpermitted_expression?
 
     begin
       @result = eval(expression)
     rescue SyntaxError
-      raise CalculationError.new(ERROR_MESAGE_SYNTAX)
+      raise CalculationError, ERROR_MESAGE_SYNTAX
     rescue ZeroDivisionError
-      raise CalculationError.new(ERROR_MESAGE_BY_ZERO)
+      raise CalculationError, ERROR_MESAGE_BY_ZERO
     end
   end
 
@@ -28,6 +30,6 @@ class CalculatorService
   def unpermitted_expression?
     return true if expression.include?('.')
 
-    !expression.match?(/[0-9\+\-\*\/]/)
+    !expression.match?(%r{[0-9+\-*/]})
   end
 end

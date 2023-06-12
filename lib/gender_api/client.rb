@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This is a client for gender api service
 
 # Documentation:
@@ -6,7 +8,6 @@
 module GenderApi
   class Client
     class GenderApiError < StandardError
-
       def initialize(code, url)
         @code = code
         @url = url
@@ -37,7 +38,7 @@ module GenderApi
       def client
         Faraday.new(
           url: 'https://gender-api.com',
-          headers: {'Authorization' => "Bearer #{authentication_token}"}
+          headers: { 'Authorization' => "Bearer #{authentication_token}" }
         ).tap do |connection|
           connection.request :timer
           connection.adapter Faraday.default_adapter

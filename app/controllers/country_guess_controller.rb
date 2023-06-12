@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CountryGuessController < ApplicationController
   def index
     service = CountryGuessService.new(sanitized_name)
@@ -7,7 +9,6 @@ class CountryGuessController < ApplicationController
 
       render json: service
     rescue GenderApi::Client::GenderApiError => e
-
       render json: { errors: e.message }, status: 422
     end
   end
