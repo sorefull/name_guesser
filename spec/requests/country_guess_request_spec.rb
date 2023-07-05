@@ -20,6 +20,18 @@ RSpec.describe 'Country guess', type: :request do
     end
   end
 
+  context 'with spacial characters' do
+    it 'renders the result with special german characters' do
+      VCR.use_cassette('successful_country_guess_special') do
+        get '/country_guess', params: { name: 'David Müller' }
+
+        expect(response.body).to include('David Müller')
+        expect(response.body).to include('time_processed')
+        expect(response.body).to include('guessed_country')
+      end
+    end
+  end
+
   context 'when passing invalid characters' do
     it 'filters the name from non characters' do
       VCR.use_cassette('successful_country_guess_asdf') do

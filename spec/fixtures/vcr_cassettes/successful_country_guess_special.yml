@@ -1,0 +1,155 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gender-api.com/v2/country-of-origin
+    body:
+      encoding: UTF-8
+      string: full_name=David+M%C3%BCller
+    headers:
+      Authorization:
+      - Bearer token
+      User-Agent:
+      - Faraday v1.8.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Wed, 05 Jul 2023 11:21:58 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-ng:
+      - 'count: 2, id: 38181'
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - '1'
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000
+      content-security-policy:
+      - frame-ancestors 'none';
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "input": {
+                "full_name": "David M\u00fcller"
+            },
+            "details": {
+                "credits_used": 2,
+                "duration": "59ms",
+                "samples": 381770,
+                "country": null,
+                "first_name_sanitized": "david"
+            },
+            "result_found": true,
+            "country_of_origin": [
+                {
+                    "country_name": "France",
+                    "country": "FR",
+                    "probability": 0.1,
+                    "continental_region": "Europe",
+                    "statistical_region": "Western Europe"
+                },
+                {
+                    "country_name": "Spain",
+                    "country": "ES",
+                    "probability": 0.1,
+                    "continental_region": "Europe",
+                    "statistical_region": "Southern Europe"
+                },
+                {
+                    "country_name": "United States",
+                    "country": "US",
+                    "probability": 0.09,
+                    "continental_region": "Americas",
+                    "statistical_region": "Northern America"
+                },
+                {
+                    "country_name": "United Kingdom",
+                    "country": "GB",
+                    "probability": 0.07,
+                    "continental_region": "Europe",
+                    "statistical_region": "Northern Europe"
+                },
+                {
+                    "country_name": "Czech Republic",
+                    "country": "CZ",
+                    "probability": 0.04,
+                    "continental_region": "Europe",
+                    "statistical_region": "Eastern Europe"
+                },
+                {
+                    "country_name": "Georgia",
+                    "country": "GE",
+                    "probability": 0.02,
+                    "continental_region": "Asia",
+                    "statistical_region": "Western Asia"
+                },
+                {
+                    "country_name": "Ireland",
+                    "country": "IE",
+                    "probability": 0.02,
+                    "continental_region": "Europe",
+                    "statistical_region": "Northern Europe"
+                },
+                {
+                    "country_name": "Australia",
+                    "country": "AU",
+                    "probability": 0.02,
+                    "continental_region": "Oceania",
+                    "statistical_region": "AustraliaandNew Zealand"
+                },
+                {
+                    "country_name": "Mexico",
+                    "country": "MX",
+                    "probability": 0.02,
+                    "continental_region": "Americas",
+                    "statistical_region": "Central America"
+                },
+                {
+                    "country_name": "Canada",
+                    "country": "CA",
+                    "probability": 0.02,
+                    "continental_region": "Americas",
+                    "statistical_region": "Northern America"
+                },
+                {
+                    "country_name": "Belgium",
+                    "country": "BE",
+                    "probability": 0.02,
+                    "continental_region": "Europe",
+                    "statistical_region": "Western Europe"
+                },
+                {
+                    "country_name": "Germany",
+                    "country": "DE",
+                    "probability": 0.02,
+                    "continental_region": "Europe",
+                    "statistical_region": "Western Europe"
+                }
+            ],
+            "country_of_origin_map_url": "https:\/\/gender-api.com\/en\/map\/74778862\/bf9dc78af293fc81",
+            "last_name": "M\u00fcller",
+            "first_name": "David",
+            "probability": 0.99,
+            "gender": "male"
+        }
+  recorded_at: Wed, 05 Jul 2023 11:21:58 GMT
+recorded_with: VCR 6.1.0
